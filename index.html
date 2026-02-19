@@ -1,42 +1,9 @@
-<!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verbos con Voz</title>
-    <script>
-        let recognition;
-
-        function initializeSpeechRecognition() {
-            if (!('webkitSpeechRecognition' in window)) {
-                alert("Tu navegador no soporta Speech Recognition.");
-                return;
-            }
-            recognition = new webkitSpeechRecognition();  // Initialize only once
-            recognition.interimResults = true;
-            recognition.lang = 'es-ES';
-
-            recognition.onresult = function(event) {
-                const transcript = event.results[event.resultIndex][0].transcript;
-                // Handle the recognized text
-                console.log(transcript);
-            };
-
-            recognition.onerror = function(event) {
-                console.error("Error occurred in recognition: " + event.error);
-            };
-        }
-
-        function startRecognition() {
-            if (!recognition) {
-                initializeSpeechRecognition(); // Preinitialize on first attempt
-            }
-            recognition.start();
-        }
-    </script>
+    <title>Sample Index</title>
 </head>
 <body>
-    <h1>Aprender Verbos en Español</h1>
-    <button onclick="startRecognition()">Iniciar Reconocimiento de Voz</button>
+    <h1>Hello, world!</h1>
+    <p>This is an example.</p>
 </body>
 </html>
